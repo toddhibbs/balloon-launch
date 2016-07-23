@@ -7,7 +7,8 @@ increment = 3
 count = 0
 max_count = 5000
 next_call = time.time()
-fo = open('data.json', 'w', 0)
+timestr = time.strftime("%Y%m%d-%H%M%S")
+fo = open('data-' + timestr + '.json', 'w', 0)
 
 fo.write('{ "data": [')
 
