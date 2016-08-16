@@ -18,8 +18,6 @@ def logger():
   global count
   global fo
 
-  data = {}
-
   next_call = next_call+increment
   if count < max_count:
     threading.Timer( next_call - time.time(), logger ).start()
@@ -39,7 +37,7 @@ def logger():
       sense.pressure,
       sense.humidity
     ]
-    fo.write(','.join(data))
+    fo.write(','.join(map(str, data)))
 
     # data['timestamp'] = datetime.now().isoformat('T')
     # data['orientation_radians'] = sense.orientation_radians
