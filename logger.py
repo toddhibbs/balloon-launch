@@ -34,7 +34,8 @@ def logger():
       sense.temp,
       sense.get_temperature_from_humidity(),
       sense.pressure,
-      sense.humidity
+      sense.humidity,
+      '\n'
     ]
     fo.write(','.join(map(str, data)))
 
