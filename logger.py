@@ -10,7 +10,7 @@ next_call = time.time()
 timestr = time.strftime("%Y%m%d-%H%M%S")
 fo = open('data-' + timestr + '.csv', 'w', 0)
 
-header = ['timestamp','orientation_radians','orientation_degrees','compass','compass_raw','gyroscope','accelerometer','temp','temp_humidity','temp_pressure','pressure','humidity'];
+header = ['timestamp','orientation_radians','orientation_degrees','compass','compass_raw','gyroscope','accelerometer','temp','temp_humidity','pressure','humidity'];
 fo.write(','.join(header))
 
 def logger():
@@ -33,7 +33,6 @@ def logger():
       sense.accelerometer,
       sense.temp,
       sense.get_temperature_from_humidity(),
-      sense.get_temperature_from_pressure(),
       sense.pressure,
       sense.humidity
     ]
